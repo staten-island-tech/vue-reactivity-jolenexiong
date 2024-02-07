@@ -25,5 +25,4 @@ img{
     width:300px;
     height:350px;
     object-fit:cover;
-}
-</style>
+}</style>

@@ -2,7 +2,7 @@
   <div>
     <DestCard v-for="destination in destinations" 
     :key="destination.name" 
-    :Destination="destination" />
+    :Destination="destination"/>
   </div>
 </template>
 
