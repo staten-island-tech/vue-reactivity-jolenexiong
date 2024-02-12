@@ -1,16 +1,18 @@
 <template>
     <div>
-        <h2>{{ Destination.name }}</h2>
-        <img :src = "Destination.img" alt=""/>
+    <h1>Murder at Staten Island Tech! Who dunnit?!?</h1>
+    <div class="showclues">
+        <h2>{{ Scene.clue1 }}</h2>
+        <img :src = "Scene.clue2"/>
         <h3>{{ clicked }}</h3>
-        <button @click="increment"> Click Me</button>
+    </div>
     </div>
 </template>
 
 <script setup>
 import {ref} from "vue";
 const props= defineProps({
-    Destination: Object,
+    destination: Object,
 })
 
 
