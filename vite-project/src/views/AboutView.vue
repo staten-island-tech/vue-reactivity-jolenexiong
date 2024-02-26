@@ -1,33 +1,15 @@
-
 <template>
-  <div>
-    <CharacterCard v-for = "Card in Cards"
-    :key="Character.name"
-    :Destination="destination"/>
+  <div class="about">
+    <h1>This is an about page</h1>
   </div>
 </template>
 
-<script>
-import CharacterCard from '@components/icons/CharacterCard.vue'
-const Characters= [
-  {
-    name: "June",
-    hair: "short,black",
-    hobbies: ""
-    
-  },
-  {
-    name: "Jolene",
-  
+<style>
+@media (min-width: 1024px) {
+  .about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
   }
-  {
-    name: "Haashne",
-    
-  }
-]
-
-</script>
-
-<style scoped>
-
+}
 </style>
