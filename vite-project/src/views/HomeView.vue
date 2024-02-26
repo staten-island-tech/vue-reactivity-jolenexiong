@@ -1,19 +1,49 @@
 <template>
   <div>
-    <SceneCard v-for="Scene in Scenes" 
-    :key="Scene.name" 
+    <DestCard v-for="destination in destinations" 
+    :key="destination.name" 
     :Destination="destination"/>
   </div>
 </template>
 
 <script setup>
-import Scene from '@/components/icons/SceneCard.vue';
-const Scene = [
+import DestCard from '@/components/icons/DestCard.vue';
+const destinations = [
   {
-    answer: "Pamithi",
-    clue1: "Victum was covered in bruises.",
-    clue2: "https://manicpanic.com/cdn/shop/products/SUL15502_Raven-Human-Hair-Glam-Strip.jpg?v=1622166495&width=500",
-    clue3: "Neighbors reported hearing NightCrawler by Travis Scott."
+    name: "Venetian Renaissance",
+    International: true,
+    price: 1300,
+    img: "https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80&quot;",
+  },
+  {
+    name: "Swiss Mountain Getaway",
+    International: true,
+    price: 800,
+    img: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1476&q=80&quot;",
+  },
+  {
+    name: "Ibizan Coastal Vacation",
+    International: true,
+    price: 1200,
+    img: "https://images.unsplash.com/photo-1547138494-97041dec734b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80&quot;",
+  },
+  {
+    name: "Hawaiian Vacation",
+    International: false,
+    price: 900,
+    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1173&q=80&quot;",
+  },
+  {
+    name: "Cascade Mountains",
+    International: false,
+    price: 400,
+    img: "https://images.unsplash.com/photo-1511497584788-876760111969?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80&quot;",
+  },
+  {
+    name: "Egyptian Exploration",
+    International: true,
+    price: 800,
+    img: "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80&quot;",
   },
 ]
 </script>
