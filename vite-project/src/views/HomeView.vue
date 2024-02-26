@@ -2,12 +2,12 @@
   <div>
     <SceneCard v-for="Scene in Scenes" 
     :key="Scene.name" 
-    :Destination="destination"/>
+    :Scene="scene"/>
   </div>
 </template>
 
 <script setup>
-import SceneCard from '@/components/icons/SceneCard.vue';
+import SceneCard from '@/components/SceneCard.vue';
 const Scenes = [
   {
     answer: "Pamithi",
@@ -36,6 +36,10 @@ const Scenes = [
   }
  
 ]
+
+
+
+
 </script>
 
 <style scoped></style>
