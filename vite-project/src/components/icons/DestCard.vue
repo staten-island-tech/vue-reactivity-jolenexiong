@@ -1,5 +1,5 @@
 <template>
-  <h1>The List!</h1>
+
   <div class="container">
   <div class="about">
    <h2 class="name">{{ Destination.name }}</h2>
@@ -7,7 +7,7 @@
    <img :src="Destination.img" alt=""/>
    <h2 class="price">{{ Destination.price }}</h2>
    <h3>{{ clicked }}</h3>
-   <button @click="increment">Add to Cart</button>
+   <button @click="$emit('add',Destination)" class="addbtn">Add to Cart</button>
 
   </div>
 </div>
@@ -19,10 +19,17 @@ const props = defineProps({
   Destination: Object,
 });
 
+
 //clicker logic
-const clicked = ref(0);
-function increment() {
-  clicked.value="added!";
+const clicked = ref("");
+function add() {
+  const btn = 
+  btn.value="Added!";
+}
+function removefromcart (){
+  array.forEach(element => {
+    
+  });
 }
 </script>
 
@@ -38,11 +45,16 @@ img {
   flex-wrap: wrap;
   background-color: rgb(249, 215, 221);
   margin: 5%;
-  padding: 1%;
+  padding: 2%;
 }
 
 h2{
   align-items: center;
+}
+
+.addbtn {
+  height: 35px;
+  margin-left: 5%;
 }
 
 </style>

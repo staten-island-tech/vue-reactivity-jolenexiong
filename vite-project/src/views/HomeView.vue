@@ -1,6 +1,6 @@
 <template>
   <div>
-  <DestCard v-for="destination in destinations"
+  <DestCard v-for="destination in destinations" @add=" (destination) => potato(destination)"
   :key="destination.name"
   :Destination="destination"/>
   </div>
@@ -49,15 +49,8 @@
            img: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTF2_HUSOg7-xnjNGn7JJ9HgQldUJJf70operrT3LXOlmy6srEE6CxmtnoKNzac260SXSi58dq5EaudAztEZ_v7wvvKvYd4s1kq8UDJh5piOfC4yvP7uFFTVHzLbpsZPOWyE00xwDg&usqp=CAc",
          },
        ];
+
+    function potato(d){
+      console.log(d)
+    }
  </script>
- 
- <style>
- @media (min-width: 1024px) {
-   .about {
-     min-height: 100vh;
-     display: flex;
-     align-items: center;
-   }
- }
- </style>
- 
