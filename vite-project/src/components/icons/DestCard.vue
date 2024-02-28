@@ -1,4 +1,5 @@
 <template>
+  <h1>The List!</h1>
   <div class="container">
   <div class="about">
    <h2 class="name">{{ Destination.name }}</h2>

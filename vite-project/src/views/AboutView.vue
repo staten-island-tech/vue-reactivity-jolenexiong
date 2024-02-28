@@ -1,11 +1,11 @@
 <template>
  <div>
-<h1>Your Cart</h1>
+cart v-for
  </div>
 </template>
 name
 <script setup>
-import DestCard from '@/components/icons/DestCard.vue';
+import cart from '@components/icons/cart.vue'
 
 </script>
 
