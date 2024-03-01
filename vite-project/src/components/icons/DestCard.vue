@@ -7,30 +7,27 @@
    <img :src="Destination.img" alt=""/>
    <h2 class="price">{{ Destination.price }}</h2>
    <h3>{{ clicked }}</h3>
-   <button @click="$emit('add',Destination)" class="addbtn">Add to Cart</button>
+   <button @click="addtocart" class="addbtn">Add to Cart</button>
 
   </div>
 </div>
 </template>
 
 <script setup>
-import {ref} from "vue";
+import {ref, defineProps, } from "vue";
 const props = defineProps({
   Destination: Object,
 });
 
+const addtocart = function () {
+  const item = props.Destination;
+  $emit('add', item);
+}
 
 //clicker logic
 const clicked = ref("");
-function add() {
-  const btn = 
-  btn.value="Added!";
-}
-function removefromcart (){
-  array.forEach(element => {
-    
-  });
-}
+
+
 </script>
 
 <style scoped>
