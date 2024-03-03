@@ -14,14 +14,16 @@
 </template>
 
 <script setup>
-import {ref, defineProps, } from "vue";
+import {ref, defineProps, defineEmits } from "vue";
 const props = defineProps({
   Destination: Object,
 });
 
+const { emit } = defineEmits();
+
 const addtocart = function () {
   const item = props.Destination;
-  $emit('add', item);
+  emit('addtocart', item);
 }
 
 //clicker logic
