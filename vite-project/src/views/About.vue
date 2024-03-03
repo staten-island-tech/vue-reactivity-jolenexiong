@@ -1,27 +1,19 @@
 <template>
- <div class="container"></div>
-  <div class="about">
-   <h2 class="name">{{ Destination.name }}</h2>
-   <h2 class="why">{{ Destination.why }}</h2>
-   <img :src="Destination.img" alt=""/>
-   <h2 class="price">{{ Destination.price }}</h2>
-   <h3>{{ clicked }}</h3>
-   <button @click="addingtocart" class="addbtn"></button>
-   </div>
+ <div>
+<h2>Your Cart</h2>
+<ol>
+  <li v-for="item in incart" :key="item.name"> {{ item.name }} - {{ item.why }} - {{ item.price }}</li>
+</ol>
+ </div>
 </template>
 
 <script setup>
-import { ref, defineProps } from 'vue';
-
-const props = defineProps ({
-  Destination: Object,
-  addtocart: Function,
-})
+import { ref } from 'vue';
 
 const incart = ref([]);
 
-const addingtocart = () => {
-  props.addtocart(props.Destination)
+const addtocart = function(item) {
+  incart.value = [...incart.value, item];
 }
 
 </script>

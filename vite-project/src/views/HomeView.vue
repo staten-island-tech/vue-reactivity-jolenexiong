@@ -1,10 +1,9 @@
 <template>
   <div>
   <DestCard v-for="destination in destinations"
-   @addtocart="addtocart"
+   @add="addtocart"
   :key="destination.name"
   :Destination="destination"
-    
   />
   
   </div>
@@ -52,12 +51,15 @@
            img: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTF2_HUSOg7-xnjNGn7JJ9HgQldUJJf70operrT3LXOlmy6srEE6CxmtnoKNzac260SXSi58dq5EaudAztEZ_v7wvvKvYd4s1kq8UDJh5piOfC4yvP7uFFTVHzLbpsZPOWyE00xwDg&usqp=CAc",
          },
        ];
- 
+
+       const incart = ref([]);
+
        const addtocart = function (item) {
-        cart.value = [...cart.value,item];
-       }
+        incart.value = [...incart.value, item];
+        console.log('in cart:', item);
+       };
 
       
     
      
- </script> 
+ </script>
