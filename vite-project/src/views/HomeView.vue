@@ -1,6 +1,7 @@
 <template>
   <div>
-  <DestCard v-for="destination in destinations" @add=" (destination) => potato(destination)"
+  <DestCard v-for="destination in destinations"
+  @add="addtocart"
   :key="destination.name"
   :Destination="destination"/>
   </div>
@@ -8,8 +9,9 @@
  name
  <script setup>
  import DestCard from '@/components/icons/DestCard.vue';
+ import { ref } from "vue";
 
-//  const addToCart = function
+
 
  const destinations = [
          {
@@ -50,7 +52,13 @@
          },
        ];
 
-    function potato(d){
-      console.log(d)
+
+
+const cart = ref([]);
+
+    const addtocart = (item) => {
+     cart.value.push(item);
+
     }
+    
  </script>

@@ -1,6 +1,15 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { ref } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
+
+
+
+const cart = ref([]);
+
+const addtocart = function(item){
+  cart.value.push(item);
+};
+
 </script>
 
 <template>
@@ -9,10 +18,12 @@ import HelloWorld from './components/HelloWorld.vue'
     <div class="wrapper">
       <HelloWorld msg="Jolene's Makeup Essentials" />
 
-      <nav>
-        <RouterLink to="/">Products</RouterLink>
-        <RouterLink to="/cart">Your Cart</RouterLink>
-      </nav>
+      
+
+      <div class="cartsection">
+        <h1><p>Cart: {{ cart.length }}</p></h1>
+        
+      </div>
     </div>
   </header>
 
@@ -60,5 +71,9 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+}
+
+.cartsection {
+  width: 50vw;
 }
 </style>

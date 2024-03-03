@@ -7,30 +7,31 @@
    <img :src="Destination.img" alt=""/>
    <h2 class="price">{{ Destination.price }}</h2>
    <h3>{{ clicked }}</h3>
-   <button @click="$emit('add',Destination)" class="addbtn">Add to Cart</button>
+   <button @click="addtocart" class="addbtn">Add to Cart</button>
 
+   
+   </div>
   </div>
-</div>
 </template>
 
 <script setup>
-import {ref} from "vue";
+import {ref, defineProps} from "vue";
+
 const props = defineProps({
   Destination: Object,
+  onaddtocart: Function,
 });
+
+
+const addtocart = () => {
+  props.onaddtocart(props.Destination);
+ 
+}
 
 
 //clicker logic
 const clicked = ref("");
-function add() {
-  const btn = 
-  btn.value="Added!";
-}
-function removefromcart (){
-  array.forEach(element => {
-    
-  });
-}
+
 </script>
 
 <style scoped>
@@ -38,6 +39,7 @@ img {
   width:100px;
   height: 150px;
   align-items: center;
+  margin: 2%;
 }
 
 .about {
@@ -54,7 +56,21 @@ h2{
 
 .addbtn {
   height: 35px;
-  margin-left: 5%;
+  margin-left: 20%;
 }
 
+.name {
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.price {
+  padding-left: 50%;
+}
+
+.addbtn {
+ 
+  margin-left: 74%;
+}
 </style>
