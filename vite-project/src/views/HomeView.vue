@@ -1,19 +1,40 @@
 <template>
-  <div>
-  <DestCard v-for="destination in destinations"
-  @add="addtocart"
-  :key="destination.name"
-  :Destination="destination"/>
+ <div class="view">
+ <h1 class="h1">Jolene's Makeup Essentials List</h1>
+
+ <div class="products">
+  <div class="item" v-for="item in list"> 
+   <h2 class="name">{{ item.name }}</h2>
+   <h2 class="why">{{ item.why }}</h2>
+   <img :src="item.img" alst=""/>
+   <h2 class="price">{{ item.price }}</h2>
+   <button @click="add(item)" class="addbtn">Add to Cart</button>
+ </div>
+
+
+ <h2 class="h2"> Your Cart </h2>
+ <div class="cart">
+  <div class="addedtocart" v-for="item in cart">
+    <h2 class="name">{{ item.name }}</h2>
+   <img :src="item.img" alt=""/>
+   <h2 class="price">{{ item.price }}</h2>
+   <button @click="remove(item)" class="removebtn">Remove</button>
   </div>
+</div>
+
+ 
+</div>
+</div>
+
+
+
  </template>
- name
+
  <script setup>
- import DestCard from '@/components/icons/DestCard.vue';
- import { ref } from "vue";
+import { reactive } from "vue";
+const cart = reactive ([]);
 
-
-
- const destinations = [
+ const list = [
          {
            name: "Rare Beauty Positive Light Tinted Moisturizer",
            why: "good light coverage for everyday use AND has SPF",
@@ -52,13 +73,94 @@
          },
        ];
 
+function add(item) {
+  if (!cart.includes(item)) {
+    cart.push(item);
+    cart.amount = 0;
+  } else {
+    const number = cart.indexOf(item);
+    cart[number].amount++
+  }
+}
 
-
-const cart = ref([]);
-
-    const addtocart = (item) => {
-     cart.value.push(item);
-
-    }
+function remove(item) {
+  const number = cart.indexOf(item);
+  cart.splice(number,1);
+}
     
  </script>
+
+<style scoped>
+
+.h1 {
+  font-size: 69px;
+  text-align: center;
+}
+
+img {
+  width:100px;
+  height: 150px;
+  align-items: center;
+  margin: 2%;
+
+}
+
+.product{
+  display: flex;
+  flex-direction: space-around;
+  flex-direction: column;
+}
+
+
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(249, 215, 221);
+  margin: 5%;
+  padding: 2%;
+
+}
+
+
+
+h2{
+  align-items: center;
+}
+
+
+
+.addbtn {
+  height: 35px;
+  margin-left: 20%;
+
+}
+
+
+
+.name {
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+
+}
+
+
+.price {
+  padding-left: 50%;
+}
+
+
+
+.addbtn {
+  margin-left: 74%;
+}
+
+.h2{
+  font-size: 45px;
+  font-weight: bold;
+}
+
+
+
+</style>
